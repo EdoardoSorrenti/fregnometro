@@ -1,0 +1,4 @@
+MAIL_USERNAME = 'autobot6573@gmail.com'
+MAIL_PASSWORD = 'Ef090694'
+SECRET_KEY = 'b246a97e959b902ac555836c0dee594e'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'

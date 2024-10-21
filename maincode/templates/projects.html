@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/projects.css')}}">
+
+{% for project in projects %}
+    {% if project.show %}
+        <a href="/project/{{ project.link }}" style="text-decoration:none; color:black;">
+            <div class="project">
+                <p class="project-name">{{ project.name }}</p>
+            </div>
+        </a>
+
+    {% endif %}
+
+{% endfor %}
+
+{% endblock content%}

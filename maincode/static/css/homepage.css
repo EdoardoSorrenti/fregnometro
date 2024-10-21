@@ -1,0 +1,58 @@
+section.hero {
+    padding:15% 5%;
+}
+
+.button-container {
+    margin: 2em 0em;
+}
+
+
+.subhead {
+    color: gray;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.title {
+    margin: 0;
+    font-size: 5em;
+}
+
+.button {
+    background: white;
+    color: green;
+    text-decoration: none;
+    padding: 0.6em 1.3em;
+    font-size: 1.4em;
+    border: 0.1em green solid;
+}
+
+
+
+section.contact {
+    background: green;
+    padding-top: 10em;
+    padding-bottom: 0em;
+    height: 40em;
+}
+
+ul.contacts {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: auto;
+    color: black;
+
+}
+
+.contact-logo {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 0;
+    padding-right: 0;
+    height: 5em;
+    width: auto;
+    display: inline-block;
+}

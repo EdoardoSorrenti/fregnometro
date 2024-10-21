@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css')}}">
+
+<section class="hero">
+    <div class="left-col">
+        <p class="subhead">Hi, I'm Edoardo</p>
+        <h1 class="title">Welcome to my website.</h1>
+    </div>
+    <div class="button-container">
+        <a href="/projects" class="button">Projects</a>
+    </div>
+
+
+</section>
+<section class="contact">
+    <ul class="contacts">
+        <li><a href="https://www.github.com/Edoardosorr"><img src="{{ url_for('static', filename='logos/GitHub_Logo.png')}}" class="contact-logo"></a></li>
+        <li><a href="https://www.twitter.com/Edoardosorr"><img src="{{ url_for('static', filename='logos/Twitter_Logo.png')}}" class="contact-logo"></a></li>
+        <li><a href="mailto:ed.sorrenti@gmail.com"><p class="contact-logo" style="font-size:2em; text-align:center;">ed.sorrenti@gmail.com</p></a></li>
+    </ul>
+</section>
+
+{% endblock content %}

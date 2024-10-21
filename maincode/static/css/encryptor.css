@@ -1,0 +1,18 @@
+.title-page {
+    height: auto;
+    width: 100%;
+    vertical-align: middle;
+    background: green;
+}
+
+.big-t {
+    font-size: 5em;
+    padding: 4em;
+    padding-bottom:.5em;
+}
+
+.small-t {
+    font-size: 3em;
+    padding: 8em;
+    padding-top:.5em;
+}
