@@ -14,12 +14,7 @@ mail = Mail()
 
 
 class Config:
-    MAIL_SERVER = 'smtp.edoardosorrenti.it'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = "bot@edoardosorrenti.it"
-    MAIL_PASSWORD = "Ef090694!"
-    SECRET_KEY = "Ef090694"
+    SECRET_KEY = "TommasoGay"
     SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
 
 
