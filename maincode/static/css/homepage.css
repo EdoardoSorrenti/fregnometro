@@ -1,58 +1,136 @@
-section.hero {
-    padding:15% 5%;
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
 }
 
-.button-container {
-    margin: 2em 0em;
+header{
+  display: inline-block;
+  grid-row: 1;
+  padding:0;
+  margin:0;
+  text-align: center;
 }
 
-
-.subhead {
-    color: gray;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+.mainTitle{
+  margin:0;
+  padding:0;
+  display: inline-grid;
+  grid-column: 2;
+  color:white;
+  text-align: center;
+  font-size: 1.5em;
+  height: 100%;
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
 }
 
-.title {
-    margin: 0;
-    font-size: 5em;
-}
-
-.button {
-    background: white;
-    color: green;
-    text-decoration: none;
-    padding: 0.6em 1.3em;
-    font-size: 1.4em;
-    border: 0.1em green solid;
-}
-
-
-
-section.contact {
-    background: green;
-    padding-top: 10em;
-    padding-bottom: 0em;
-    height: 40em;
-}
-
-ul.contacts {
-    margin: 0;
-    padding: 0;
+.bottoneMain{
+    opacity: 1;
+    margin: 10px 0;
+    width: 200px;
+    height: 80px;
+    outline: 0;
+    color: #ffffff;
+    padding: auto;
+    font-size: 50%;
+    line-height: 40px;
+    position: relative;
     text-align: center;
-    font-weight: bold;
-    font-size: auto;
-    color: black;
-
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1vw;
+    border-radius: 1000px;
+    
+    &:hover{
+      
+      &:after{
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+      
+      &:before{
+        opacity: 0;
+        transform: translateY(50%) rotateX(90deg);
+      }
+    }
+    
+    &:after{
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      color: #691717;
+      display: block;
+      transition-duration: 0.5s;;
+      position: absolute;
+      background: #adadaf;
+      content: attr(data-back);
+      transform: translateY(-50%) rotateX(90deg);
+    }
+    
+    &:before{
+      top: 0;
+      left: 0;
+      opacity: 1;
+      color: #ffffff;
+      display: block;
+      line-height: 40px;
+      transition-duration: 0.5s;
+      position: relative;
+      background: #540707;
+      content: attr(data-front);
+      transform: translateY(0) rotateX(0);
+    }
 }
 
-.contact-logo {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 0;
-    padding-right: 0;
-    height: 5em;
-    width: auto;
-    display: inline-block;
+.choose{
+    display: inline-grid;
+    align-items: center;
+    margin: 0px 90px;
+    margin-top: 50px;
+    column-gap: 15%;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+footer{
+  display: inline-grid;
+  grid-row: 4;
+  align-items: center;
+  margin:0;
+  padding:0;
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.testobottom{
+  text-align: center;
+  color:white;
+  text-decoration: none;
+}
+
+.left{
+    display: inline-grid;
+    grid-column: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.fregna_img{
+    height: 356;
+    width: 200px;
+}
+
+.right{
+    display: inline-grid;
+    grid-column: 3;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

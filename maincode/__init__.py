@@ -34,15 +34,11 @@ def create_app():
     mail.init_app(app)
 
     from maincode.main.routes import main
-    from maincode.admin.routes import admin
     from maincode.users.routes import users
-    from maincode.projects.routes import projects
     from maincode.errors.handlers import errors
 
     app.register_blueprint(main)
-    app.register_blueprint(admin)
     app.register_blueprint(users)
-    app.register_blueprint(projects)
     app.register_blueprint(errors)
 
     return app

@@ -30,6 +30,11 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+class AddFregna(FlaskForm):
+    tag = StringField('tag', validators=[DataRequired()])
+    password = StringField('Password', validators=[DataRequired()])
+    submit = SubmitField('Login')
+
 
 class UpdateAccount(FlaskForm):
     username = StringField('Username',validators=[DataRequired(), Length(min=2, max=20)])

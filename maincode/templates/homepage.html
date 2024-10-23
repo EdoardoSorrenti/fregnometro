@@ -2,25 +2,72 @@
 {% block content %}
 
 <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css')}}">
 
-<section class="hero">
-    <div class="left-col">
-        <p class="subhead">Hi, I'm Edoardo</p>
-        <h1 class="title">Welcome to my website.</h1>
+<!-- Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<!-- Javascript -->
+<script>
+    let fregnaLeft;
+    let fregnaRight;
+    function fetchFregna() {
+        fetch('/get_fregne')
+        .then(response => response.json())
+        .then(function(data) {
+            fregnaLeftPath = data.left_path;
+            fregnaLeft = data.left;
+            fregnaRightPath = data.right_path;
+            fregnaRight = data.right;
+            document.getElementById('fregna_left').src = fregnaLeftPath;
+            document.getElementById('bottoneLeft').setAttribute("data-back", "@".concat(fregnaLeft));
+            document.getElementById('fregna_right').src = fregnaRightPath;
+            document.getElementById('bottoneRight').setAttribute("data-back", "@".concat(fregnaRight));
+        })
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchFregna();
+    });
+
+    function postFregnaLeft() {
+        fetch("/post_fregna", 
+            {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({vincitrice: fregnaLeft, perdente: fregnaRight})
+            }
+        ).then(response => response.json());
+        fetchFregna()
+    }
+    function postFregnaRight() {
+        fetch("/post_fregna", 
+            {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({vincitrice: fregnaRight, perdente: fregnaLeft})
+            }
+        ).then(response => response.json());
+        fetchFregna();
+    }
+</script>
+
+<div class="choose">
+    <div class="left">
+        <img class="fregna_img" id="fregna_left"> <br>
+        <a id = "bottoneLeft" class="bottoneMain" data-front="Sinistra" onclick="postFregnaLeft()"></a>
     </div>
-    <div class="button-container">
-        <a href="/projects" class="button">Projects</a>
+    <div class="mainTitle">F<br>R<br>E<br>G<br>N<br>O<br>M<br>E<br>T<br>R<br>O</div>
+    <div class="right">
+        <img class="fregna_img" id="fregna_right"> <br> <br>
+        <a id = "bottoneRight" class="bottoneMain" data-front="Destra" onclick="postFregnaRight()"></a>
     </div>
+</div>
 
+<footer>
+    <a class="testobottom" href="/classifica">Classifica</a>
+</footer>
 
-</section>
-<section class="contact">
-    <ul class="contacts">
-        <li><a href="https://www.github.com/Edoardosorr"><img src="{{ url_for('static', filename='logos/GitHub_Logo.png')}}" class="contact-logo"></a></li>
-        <li><a href="https://www.twitter.com/Edoardosorr"><img src="{{ url_for('static', filename='logos/Twitter_Logo.png')}}" class="contact-logo"></a></li>
-        <li><a href="mailto:ed.sorrenti@gmail.com"><p class="contact-logo" style="font-size:2em; text-align:center;">ed.sorrenti@gmail.com</p></a></li>
-    </ul>
-</section>
 
 {% endblock content %}

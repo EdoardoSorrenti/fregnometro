@@ -11,7 +11,7 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    instatag = db.Column(db.String(20), unique=True, nullable=False)
+    tag = db.Column(db.String(20), unique=True, nullable=False)
     ELO =db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
